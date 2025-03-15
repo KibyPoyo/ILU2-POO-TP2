@@ -28,7 +28,7 @@ public class BoundaryEmmenager {
 
 				case 2:
 					question.delete(0, question.length());
-					question.append("Bienvenue druide " + nomVisiteur + ", quelle est votre force ?\n");
+					question.append("Bienvenue gaulois " + nomVisiteur + ", quelle est votre force ?\n");
 					int force = Clavier.entrerEntier(question.toString());
 					controlEmmenager.ajouterGaulois(nomVisiteur, force);
 					break;
