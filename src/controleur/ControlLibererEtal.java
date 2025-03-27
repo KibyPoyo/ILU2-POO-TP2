@@ -31,7 +31,7 @@ public class ControlLibererEtal {
 			return etal.etatEtal();
 		} else {
 			donneesEtal[0] = String.valueOf(false);
-			return donneesEtal;
+			return null;
 		}
 	}
 
