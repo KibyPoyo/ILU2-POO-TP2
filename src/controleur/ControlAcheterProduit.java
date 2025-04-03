@@ -17,8 +17,8 @@ public class ControlAcheterProduit {
 		this.controlTrouverEtalVendeur = controlTrouverEtalVendeur;
 	}
 
-	public boolean estAcheteurPresent(String nomAcheteur) {
-		return controlVerifierIdentite.verifierIdentite(nomAcheteur);
+	public boolean estVillageoisPresent(String nom) {
+		return controlVerifierIdentite.verifierIdentite(nom);
 	}
 	
 	public boolean estProduitEnVente(String produit) {
@@ -31,6 +31,9 @@ public class ControlAcheterProduit {
 	
 	public int acheterProduit(String nomVendeur, int quantite) {
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		if (etal == null) {
+			return -1;
+		}
 		int quantiteeAchetee = etal.acheterProduit(quantite);
 		return quantiteeAchetee;
 	}

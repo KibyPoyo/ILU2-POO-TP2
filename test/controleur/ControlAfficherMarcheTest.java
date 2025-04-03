@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Gaulois;
 import villagegaulois.Village;
 
 class ControlAfficherMarcheTest {
@@ -27,9 +28,21 @@ class ControlAfficherMarcheTest {
 	}
 	
 	@Test
-	void testDonnerInfosMarche() {
-		System.out.println(controlAfficherMarche.donnerInfosMarche());
-		fail("TODO");
+	void testDonnerInfosMarche() {	
+		Gaulois asterix = new Gaulois("Asterix",5);
+		Gaulois bonemine = new Gaulois("Bonemine",3);
+		Gaulois homeopatix = new Gaulois("Homeopatix",9);
+		village.ajouterHabitant(asterix);
+		village.ajouterHabitant(bonemine);
+		village.ajouterHabitant(homeopatix);
+		village.installerVendeur(asterix, "casques", 12);
+		village.installerVendeur(bonemine, "fleurs", 20);
+		village.installerVendeur(homeopatix, "sucre", 100);
+		
+		String[] infosMarche = controlAfficherMarche.donnerInfosMarche();
+		
+		String[] expectedResult = new String[]{"Asterix","12","casques","Bonemine","20","fleurs","Homeopatix","100","sucre"};
+		assertArrayEquals(infosMarche,expectedResult);
 	}
 
 

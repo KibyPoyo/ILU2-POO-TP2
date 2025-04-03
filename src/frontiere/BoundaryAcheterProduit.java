@@ -11,7 +11,7 @@ public class BoundaryAcheterProduit {
 	}
 
 	public void acheterProduit(String nomAcheteur) {
-		if (!controlAcheterProduit.estAcheteurPresent(nomAcheteur)) {
+		if (!controlAcheterProduit.estVillageoisPresent(nomAcheteur)) {
 			System.out.println("Je suis désolé " + nomAcheteur + " mais il faut être un habitant"
 					+ " de notre village pour commercer ici.");
 			return;
